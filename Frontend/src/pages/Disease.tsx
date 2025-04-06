@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import jsPDF from "jspdf";
 import ReactMarkdown from "react-markdown";
 import { Leaf } from "lucide-react";
 import { useLanguage } from '../contexts/LanguageContext'; 
@@ -41,11 +40,7 @@ const DiseaseDetection = () => {
     }
   };
 
-  const handleDownload = () => {
-    const doc = new jsPDF();
-    doc.text(result || "No result to download", 10, 10);
-    doc.save("plant-analysis.pdf");
-  };
+ 
 
   return (
     <div className="min-h-screen bg-[#f7f7e8]">
@@ -147,12 +142,7 @@ const DiseaseDetection = () => {
                         <ReactMarkdown>{result}</ReactMarkdown>
                       </div>
                       
-                      <button 
-                        onClick={handleDownload} 
-                        className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center"
-                      >
-                        Download PDF Report
-                      </button>
+                      
                     </>
                   )}
                 </div>
