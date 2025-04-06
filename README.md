@@ -61,7 +61,7 @@ npm install
 - Start the backend server:
 ```bash
 cd backend
-npm start
+npm run dev
 ```
 
 - Start the frontend development server:
